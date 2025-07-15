@@ -1,0 +1,103 @@
+[
+  {
+    "question": "Which keyword is used to declare a variable in Java?",
+    "options": {
+      "A": "var",
+      "B": "int",
+      "C": "variable",
+      "D": "decl"
+    },
+    "correct": "B"
+  },
+  {
+    "question": "What is the entry point of a Java application?",
+    "options": {
+      "A": "start() method",
+      "B": "main() method",
+      "C": "run() method",
+      "D": "init() method"
+    },
+    "correct": "B"
+   saturate
+  },
+  {
+    "question": "Which operator is used for assigning a value to a variable?",
+    "options": {
+      "A": "==",
+      "B": "+=",
+      "C": "=",
+      "D": "-"
+    },
+    "correct": "C"
+  },
+  {
+    "question": "Which statement is used to exit a loop in Java?",
+    "options": {
+      "A": "continue",
+      "B": "break",
+      "C": "exit",
+      "D": "return"
+    },
+    "correct": "B"
+  },
+  {
+    "question": "What is the default value of a boolean variable in Java?",
+    "options": {
+      "A": "true",
+      "B": "false",
+      "C": "0",
+      "D": "null"
+    },
+    "correct": "B"
+  },
+  {
+    "question": "Which of the following is a primitive data type in Java?",
+    "options": {
+      "A": "String",
+      "B": "Array",
+      "C": "int",
+      "D": "Object"
+    },
+    "correct": "C"
+  },
+  {
+    "question": "How do you create an object of a class?",
+    "options": {
+      "A": "new ClassName();",
+      "B": "create ClassName();",
+      "C": "ClassName object = ClassName();",
+      "D": "object = new ClassName();"
+    },
+    "correct": "A"
+  },
+  {
+    "question": "Which keyword is used to define a class in Java?",
+    "options": {
+      "A": "class",
+      "B": "ClassName",
+      "C": "define",
+      "D": "object"
+    },
+    "correct": "A"
+  },
+  {
+    "question": "What is the correct way to comment out multiple lines in Java?",
+    "options": {
+      "A": "// comment",
+      "B": "/* comment */",
+      "C": "# comment #",
+      "D": "<!-- comment -->"
+    },
+    "correct": "B"
+  },
+  {
+    "question": "Which symbol is used to end a statement in Java?",
+    "options": {
+      "A": ".",
+      "B": ";",
+      "C": ":",
+      "D": ","
+    },
+    "correct": "B"
+  }
+]

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: rgb(var(--color-slate-900)); 
+    color: rgb(var(--color-white));
+    font-family: var(--font-poppins);
+  }
+}
+
+html, body {
+  background-color: #0e1b24; /* or whatever your neon-dark theme base is */
+  color: #fff; /* optional: default text color */
+  margin: 0;
+  padding: 0;
+}
