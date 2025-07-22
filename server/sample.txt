@@ -18,7 +18,6 @@
       "D": "init() method"
     },
     "correct": "B"
-   saturate
   },
   {
     "question": "Which operator is used for assigning a value to a variable?",
