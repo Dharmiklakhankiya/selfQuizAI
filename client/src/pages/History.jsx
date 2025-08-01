@@ -29,7 +29,7 @@ const History = () => {
   }, []);
 
   const handleTakeQuiz = (id) => {
-    navigate(`/test/${id}`);
+    navigate(`/quiz/${id}`); // Updated to match backend route
   };
 
   const handleNewQuiz = () => {
