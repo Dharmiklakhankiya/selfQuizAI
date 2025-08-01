@@ -40,6 +40,14 @@ const App = () => {
             }
           />
           <Route
+            path="/quiz/:id"
+            element={
+              <ProtectedRoute>
+                <TakeTest />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/history"
             element={
               <ProtectedRoute>
