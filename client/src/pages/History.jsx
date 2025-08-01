@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 
+const API_URL = import.meta.env.VITE_API_URL; // 👈 Dynamic URL from .env
+
 const History = () => {
   const [history, setHistory] = useState([]);
   const [error, setError] = useState('');
@@ -12,7 +14,7 @@ const History = () => {
     const fetchHistory = async () => {
       try {
         setLoading(true);
-        const res = await fetch('http://localhost:3000/history');
+        const res = await fetch(`${API_URL}/history`); // 👈 Fixed fetch
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         setHistory(data);
@@ -45,6 +47,7 @@ const History = () => {
       </div>
     );
   }
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] p-6 text-[#e0e7ff]">
       <div className="w-full max-w-5xl mx-auto pt-6">

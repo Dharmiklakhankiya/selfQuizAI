@@ -2,13 +2,15 @@ import React, { createContext, useState, useEffect } from 'react';
 
 export const AuthContext = createContext();
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token') || null);
 
   useEffect(() => {
     if (token) {
-      fetch('http://localhost:3000/api/auth/protected', {
+      fetch(`${API_URL}/api/auth/protected`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => {
@@ -24,7 +26,7 @@ const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = async (username, password) => {
-    const res = await fetch('http://localhost:3000/api/auth/login', {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),

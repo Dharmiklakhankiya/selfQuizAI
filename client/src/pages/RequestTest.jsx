@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const RequestTest = () => {
   const [topic, setTopic] = useState('');
   const [difficulty, setDifficulty] = useState('easy');
@@ -18,7 +20,7 @@ const RequestTest = () => {
 
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/quiz', {
+      const res = await fetch(`${API_URL}/quiz`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ topic, difficulty, count: questionCount })
@@ -32,20 +34,18 @@ const RequestTest = () => {
       const { quizId } = await res.json();
       navigate('/history');
     } catch (err) {
-      setError(
-        '❌ Error generating quiz. Try a different topic/difficulty or check server logs.'
-      );
+      setError('❌ Error generating quiz. Try a different topic/difficulty or check server logs.');
     } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] flex items-center justify-center p-6">
       <div className="w-full max-w-xl p-8 rounded-xl bg-[#0f172a]/90 shadow-[0_0_30px_#00f2fe] border border-[#00f2fe]/20 backdrop-blur-md">
         <h2 className="text-3xl font-extrabold text-center mb-8 leading-snug text-transparent bg-clip-text bg-gradient-to-r from-[#00f2fe] via-[#39ff14] to-[#f7971e] drop-shadow-[0_2px_20px_#00f2fe]">
           Generate Your AI Quiz
         </h2>
-
 
         {error && (
           <p className="mb-4 p-3 bg-red-600/20 text-red-300 rounded-md text-sm border border-red-400/30">
@@ -54,9 +54,10 @@ const RequestTest = () => {
         )}
 
         <div className="space-y-6">
-          <div>            <label htmlFor="topic" className="block text-sm font-medium text-slate-200 mb-1">
-            Topic
-          </label>
+          <div>
+            <label htmlFor="topic" className="block text-sm font-medium text-slate-200 mb-1">
+              Topic
+            </label>
             <input
               id="topic"
               placeholder="e.g. GraphQL, Sorting Algorithms"
@@ -96,7 +97,9 @@ const RequestTest = () => {
               onChange={(e) => setNumQuestions(e.target.value)}
               className="w-full p-3 rounded-md bg-[#1e293b] text-white placeholder-gray-400 border border-[#00f2fe]/20 focus:outline-none focus:ring-2 focus:ring-[#39ff14]"
             />
-          </div>          <button
+          </div>
+
+          <button
             onClick={handleSubmit}
             disabled={isLoading}
             className="w-full bg-gradient-to-r from-[#00f2fe] via-[#39ff14] to-[#00f2fe] text-[#0f172a] p-3 rounded-md font-bold hover:scale-[1.02] hover:shadow-xl transition-all duration-300 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
