@@ -116,8 +116,8 @@ const TakeTest = () => {
               }`}
             >
               <p className="font-semibold text-white">{i + 1}. {q.question}</p>
-              <p className="text-cyan-300">Your answer: {answers[i] || 'Not answered'}</p>
-              <p className="text-purple-300">Correct: {q.correct}</p>
+              <p className="text-cyan-300">Your answer: <span className="text-pink-400">{answers[i] ? `${answers[i]}. ${q.options[answers[i]]}` : 'Not answered'}</span></p>
+              <p className="text-purple-300">Correct: <span className="text-green-400">{q.correct}. {q.options[q.correct]}</span></p>
             </div>
           ))}
         </div>
