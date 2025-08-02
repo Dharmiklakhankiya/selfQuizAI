@@ -15,6 +15,10 @@
 
 ---
 
+---
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-green?style=for-the-badge)](https://self-quiz-ai.vercel.app)
+---
+
 ## 📋 Prerequisites
 
 Before running the app, make sure you have:
